@@ -1,0 +1,19 @@
+﻿@using EntityLayer.Concrete;
+@model IEnumerable<HaberBaslik>
+
+@using(Html.BeginForm("Index","HaberBasliks",FormMethod.Get))
+{
+    @Html.TextBox("searching")
+    <input type="submit" value="submit"/>
+}
+<table>
+    <tr>
+        <th>Description</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem=>item.Description)</td>
+        </tr>
+    }
+</table>
